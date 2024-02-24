@@ -4,54 +4,54 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="38.651">
+           time="38.620">
     <properties></properties>
 
 
 
             <testcase
-                name="validateNewsletter_section"
-                time="2.053"
-                classname="Main.EinfoChipsHome">
-            </testcase>
-            <testcase
-                name="ContactUs_page"
-                time="8.602"
-                classname="Main.EinfoChipsHome">
-            </testcase>
-            <testcase
-                name="domainsOptions"
-                time="12.109"
-                classname="Main.EinfoChipsHome">
-            </testcase>
-            <testcase
-                name="validateSemiCond_page"
-                time="3.020"
+                name="validateChampionInnovation"
+                time="6.086"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateLogo"
-                time="2.045"
+                time="2.049"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="backHome_page"
-                time="4.626"
+                time="4.551"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateMenuHeaders"
-                time="0.067"
+                time="0.076"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="domainsOptions"
+                time="9.062"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateNewsletter_section"
+                time="2.042"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateAerospace_section"
-                time="0.038"
+                time="0.037"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
-                name="validateChampionInnovation"
-                time="6.091"
+                name="ContactUs_page"
+                time="11.698"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateSemiCond_page"
+                time="3.019"
                 classname="Main.EinfoChipsHome">
             </testcase>
 </testsuite>

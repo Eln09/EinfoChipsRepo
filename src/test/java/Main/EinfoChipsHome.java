@@ -93,11 +93,8 @@ public class EinfoChipsHome {
             String SemiCpageUrl = driver.getCurrentUrl();
             String SemiCpageTitle = driver.getTitle();
 
-            action.SoftAssertString(SemiCpageUrl, SemiCondUrl, "URL not expected: " + SemiCpageUrl);
-            action.SoftAssertString(SemiCpageTitle, SemiCondTitle, "title not expected: " + SemiCondTitle);
-            System.out.println("The semiconductor page url and title are the expected ones:" +
-                    "\n     - url: "+SemiCpageUrl+"" +
-                    "\n     - title: "+SemiCpageTitle);
+            action.SoftAssertString(SemiCpageUrl, SemiCondUrl, "URL is expected: " + SemiCpageUrl);
+            action.SoftAssertString(SemiCpageTitle, SemiCondTitle, "title is expected: " + SemiCondTitle);
         }
 
         //6. Click on the logo , application should move back to Home Page.
