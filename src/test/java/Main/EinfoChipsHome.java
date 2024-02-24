@@ -72,6 +72,7 @@ public class EinfoChipsHome {
         //4. Mouse hover on Domains from Primary header menu option then click on Semiconductor.
         @Test(priority = 3)
         public void domainsOptions() throws Exception{
+            Thread.sleep(2000);
             action.MouseHover(action.find_elem(locator.HomeMenuDomains()));
             Thread.sleep(2000);
             WebElement semiconductorOption= action.find_elem(locator.SemiconductorDomains());
