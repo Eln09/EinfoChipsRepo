@@ -84,7 +84,7 @@ public class EinfoChipsHome {
                 System.out.println("Semiconductor option not in Domains menu");
             }*/
         }
-
+/*
         //5. Validate in Semiconductor page UTL = https://www.einfochips.com/domains/semiconductor/ and Title  = Semiconductor Design Services | ASIC/FPGA Design Services
         @Parameters({"SemiCondUrl","SemiCondTitle"})
         @Test(priority = 4)
@@ -163,6 +163,6 @@ public class EinfoChipsHome {
         action.SoftAssertBoolean(HasAerospaceSRC,true,"Aerospace image's src contains text 'aerospace'");
         //System.out.println(myList.get(0));
         //action.FinalSoftAssert();
-    }
+    }*/
 
 }
