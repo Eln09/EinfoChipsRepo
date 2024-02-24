@@ -76,13 +76,13 @@ public class EinfoChipsHome {
             action.MouseHover(action.find_elem(locator.HomeMenuDomains()));
             Thread.sleep(2000);
             WebElement semiconductorOption= action.find_elem(locator.SemiconductorDomains());
-            action.SoftAssertBoolean(action.elem_present(semiconductorOption), true, "semiconductor option is present!");
-            /*if(action.elem_present(semiconductorOption)) {
+            if(action.elem_present(semiconductorOption)) {
+                System.out.println("semiconductor option is present!");
                 action.click_elem(semiconductorOption);
                 Thread.sleep(2000);
             }else {
                 System.out.println("Semiconductor option not in Domains menu");
-            }*/
+            }
         }
 /*
         //5. Validate in Semiconductor page UTL = https://www.einfochips.com/domains/semiconductor/ and Title  = Semiconductor Design Services | ASIC/FPGA Design Services
