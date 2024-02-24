@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="EinfoChipsSuite" verbose="1" >
+    <parameter name="url" value="https://www.einfochips.com/"/>
+    <parameter name="listMenu" value="Services,IPs &amp; Frameworks,Domains,Reference Designs,Partnerships,About Us"/>
+    <parameter name="SemiCondUrl" value="https://www.einfochips.com/domains/semiconductor/"/>
+    <parameter name="SemiCondTitle" value="Semiconductor Design Services | ASIC/FPGA Design Services"/>
+    <parameter name="NewsletterEmail" value="Business Email*"/>
+    <parameter name="ContactName" value="Elena"/>
+    <parameter name="ContactEmail" value="random@email.com"/>
+    <parameter name="ContactCell" value="12345678"/>
+    <parameter name="ContactCompany" value="The company"/>
+    <parameter name="ContactOption" value="Domains"/>
+    <parameter name="ContactComment" value="a comment is getting written"/>
+    <parameter name="EspecializationNum" value="10"/>
+    <test name="EinfoChips">
+        <classes>
+            <class name="Main.EinfoChipsHome"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EinfoChips"
+           tests="9"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="38.651">
+    <properties></properties>
+
+
+
+            <testcase
+                name="validateNewsletter_section"
+                time="2.053"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="ContactUs_page"
+                time="8.602"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="domainsOptions"
+                time="12.109"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateSemiCond_page"
+                time="3.020"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateLogo"
+                time="2.045"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="backHome_page"
+                time="4.626"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateMenuHeaders"
+                time="0.067"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateAerospace_section"
+                time="0.038"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateChampionInnovation"
+                time="6.091"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+</testsuite>
