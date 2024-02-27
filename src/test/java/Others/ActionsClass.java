@@ -67,9 +67,16 @@ public class ActionsClass {
             e.printStackTrace();
         }
     }
-    public void MouseHover(WebElement elem){
-        Actions a = new Actions(this.driver);
-        a.moveToElement(elem).perform();
+    public void MouseHover(By by)throws Exception{
+        Actions a = new Actions(driver);
+        boolean flag= false;
+        try{
+            WebElement elem = driver.findElement(by);
+            a.moveToElement(elem).perform();
+            Thread.sleep(2000);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     public void SoftAssertString(String x,String y, String ifexpected){
         SoftAssert softAssert = new SoftAssert();

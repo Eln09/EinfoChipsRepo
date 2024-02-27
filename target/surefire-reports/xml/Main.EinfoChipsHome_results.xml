@@ -4,54 +4,54 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="38.620">
+           time="36.173">
     <properties></properties>
 
 
 
             <testcase
                 name="validateChampionInnovation"
-                time="6.086"
+                time="6.141"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateLogo"
-                time="2.049"
+                time="2.083"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="backHome_page"
-                time="4.551"
+                time="4.753"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateMenuHeaders"
-                time="0.076"
+                time="0.140"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="domainsOptions"
-                time="9.062"
+                time="8.863"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateNewsletter_section"
-                time="2.042"
+                time="2.071"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateAerospace_section"
-                time="0.037"
+                time="0.049"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="ContactUs_page"
-                time="11.698"
+                time="9.037"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateSemiCond_page"
-                time="3.019"
+                time="3.036"
                 classname="Main.EinfoChipsHome">
             </testcase>
 </testsuite>
