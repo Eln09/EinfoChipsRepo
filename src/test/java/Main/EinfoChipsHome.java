@@ -77,14 +77,20 @@ public class EinfoChipsHome {
     public void domainsOptions() throws Exception{
 
           try {
-                WebElement domainsOption = driver.findElement(By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]/ancestor::li[1]"));
+                WebElement domainsOption = driver.findElement(By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]"));
                 if (domainsOption != null) {
                     System.out.println("Domain option is present!");
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].dispatchEvent(new Event('mouseover'))", domainsOption);
+                    Actions actions = new Actions(driver);
+                    actions.moveToElement(domainsOption).perform();
                     Thread.sleep(3000); // Add a wait to observe the effect if needed
-                     driver.findElement(By.xpath("(//li[contains(@class, 'ubermenu-item')]//a[contains(@href, 'semiconductor') and contains(@class, 'ubermenu-target')])[1]")).click();
-                    Thread.sleep(3000);
-                    System.out.println(driver.getCurrentUrl());
+                    WebElement semiconductorOption = driver.findElement(By.xpath("//a[contains(@href, 'semiconductor') and contains(@class, 'ubermenu-target')]"));
+                    if (semiconductorOption != null) {
+                        semiconductorOption.click();
+                        Thread.sleep(3000);
+                        System.out.println(driver.getCurrentUrl());
+                    } else {
+                        System.out.println("Semiconductor option not found!");
+                    }
                 }
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
