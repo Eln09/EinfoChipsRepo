@@ -13,11 +13,14 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.awt.event.MouseEvent;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+
+import static java.awt.SystemColor.window;
 
 public class EinfoChipsHome {
 
@@ -72,19 +75,21 @@ public class EinfoChipsHome {
         //4. Mouse hover on Domains from Primary header menu option then click on Semiconductor.
         @Test(priority = 3)
         public void domainsOptions() throws Exception{
-            Thread.sleep(2000);
-            action.JsExecutor("arguments[0].dispatchEvent(new MouseEvent('mouseover', { 'view': window, 'bubbles': true, 'cancelable': true }))",locator.HomeMenuDomains());
-            Thread.sleep(2000);
-            //WebElement semiconductorOption= action.find_elem(locator.SemiconductorDomains());
+
             if(action.elem_present(locator.HomeMenuDomains())) {
                 System.out.println("semiconductor option is present!");
-                action.click_elem(locator.HomeMenuDomains());
+                //action.click_elem(locator.HomeMenuDomains());
                 Thread.sleep(2000);
             }else {
                 System.out.println("Semiconductor option not in Domains menu");
             }
+
+         /*   action.JsExecutor("arguments[0].dispatchEvent(new MouseEvent('mouseover', { 'view': window, 'bubbles': true, 'cancelable': true }))",locator.HomeMenuDomains());
+            Thread.sleep(2000);
+            //WebElement semiconductorOption= action.find_elem(locator.SemiconductorDomains());
+
         }
-/*
+
         //5. Validate in Semiconductor page UTL = https://www.einfochips.com/domains/semiconductor/ and Title  = Semiconductor Design Services | ASIC/FPGA Design Services
         @Parameters({"SemiCondUrl","SemiCondTitle"})
         @Test(priority = 4)
@@ -165,4 +170,4 @@ public class EinfoChipsHome {
         //action.FinalSoftAssert();
     }*/
 
-}
+}}

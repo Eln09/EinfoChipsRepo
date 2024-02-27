@@ -20,7 +20,7 @@ public class Locators{
         return a;
     }
     public By HomeMenuDomains(){
-        By a= By.xpath("(//span[@class='ubermenu-target-title ubermenu-target-text' and text()='Domains'])[1]");
+        By a= By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]");
         return a;
     }
     public By NewsletterSection(){
