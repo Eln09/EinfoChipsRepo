@@ -76,12 +76,11 @@ public class EinfoChipsHome {
         @Test(priority = 3)
     public void domainsOptions() throws Exception{
 
-          try {
+            try {
                 WebElement domainsOption = driver.findElement(locator.HomeMenuDomains());
                 if(domainsOption != null) {
                     System.out.println("Domain option is present!");
-                    Actions actions = new Actions(driver);
-                    actions.moveToElement(driver.findElement(locator.HomeMenuDomains())).perform();
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].dispatchEvent(new Event('mouseover'))", By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]/ancestor::li[1]"));
                     Thread.sleep(3000);
                 }
             } catch (NoSuchElementException e) {
