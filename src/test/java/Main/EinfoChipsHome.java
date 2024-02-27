@@ -82,7 +82,7 @@ public class EinfoChipsHome {
                     System.out.println("Domain option is present!");
                     ((JavascriptExecutor) driver).executeScript("arguments[0].dispatchEvent(new Event('mouseover'))", domainsOption);
                     Thread.sleep(3000); // Add a wait to observe the effect if needed
-                     driver.findElement(By.xpath("(//li[contains(@class, 'ubermenu-item')]//a[contains(@href, 'semiconductor') and contains(@class, 'ubermenu-target')])[1]"))).click();
+                     driver.findElement(By.xpath("(//li[contains(@class, 'ubermenu-item')]//a[contains(@href, 'semiconductor') and contains(@class, 'ubermenu-target')])[1]")).click();
                     Thread.sleep(3000);
                     System.out.println(driver.getCurrentUrl());
                 }
