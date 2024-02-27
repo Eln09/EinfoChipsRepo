@@ -83,6 +83,10 @@ public class EinfoChipsHome {
                     driver.findElement(locator.HomeMenuDomains()).click();
                     Thread.sleep(3000);
                     System.out.println(driver.getCurrentUrl());
+                     }
+            } catch (NoSuchElementException e) {
+                System.out.println("Domain option not found in Domains menu");
+            }
         }
 
          /*   action.JsExecutor("arguments[0].dispatchEvent(new MouseEvent('mouseover', { 'view': window, 'bubbles': true, 'cancelable': true }))",locator.HomeMenuDomains());
