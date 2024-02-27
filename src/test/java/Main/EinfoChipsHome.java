@@ -76,7 +76,7 @@ public class EinfoChipsHome {
         @Test(priority = 3)
         public void domainsOptions() throws Exception{
 
-            try {
+           try {
                 WebElement domainsOption = driver.findElement(locator.HomeMenuDomains());
                 if(domainsOption != null) {
                     System.out.println("Domain option is present!");
@@ -84,10 +84,12 @@ public class EinfoChipsHome {
                     // Perform mouse hover on "Domains" option to trigger expected behavior
                     Actions actions = new Actions(driver);
                     actions.moveToElement(domainsOption).perform();
-                    if(driver.findElement(locator.SemiconductorDomains()) != null) {
+                    if(locator.SemiconductorDomains()!= null) {
                         System.out.println("semicondcutor option is present!");
                         // Perform the mouse hover action here
                         Thread.sleep(2000); // Just for demonstration, you can remove this
+                    }else{
+                        System.out.println("not seen");
                     }
                     // Add verification here for the expected outcome after mouse hover
 
