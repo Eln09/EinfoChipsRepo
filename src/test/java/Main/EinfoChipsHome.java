@@ -80,7 +80,7 @@ public class EinfoChipsHome {
                 WebElement domainsOption = driver.findElement(locator.HomeMenuDomains());
                 if(domainsOption != null) {
                     System.out.println("Domain option is present!");
-                    driver.findElement(By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]")).click();
+                    action.JsExecutor("arguments[0].click();", By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]"));
                     Thread.sleep(3000);
                     System.out.println(driver.getCurrentUrl());
                     // Perform mouse hover on "Domains" option to trigger expected behavior
