@@ -84,14 +84,14 @@ public class EinfoChipsHome {
                     Actions actions = new Actions(driver);
                     actions.moveToElement(domainsOption).perform();
                     Thread.sleep(3000); // Add a wait to observe the effect if needed
-                    WebElement semiconductorOption = driver.findElement(By.xpath("(//a[contains(@href, 'semiconductor') and contains(@class, 'ubermenu-target')])[1]"));
-                    if (semiconductorOption != null) {
-                        semiconductorOption.click();
-                        Thread.sleep(3000);
-                        System.out.println(driver.getCurrentUrl());
-                    } else {
-                        System.out.println("Semiconductor option not found!");
-                    }
+                   // WebElement semiconductorOption = driver.findElement(By.xpath("(//a[contains(@href, 'semiconductor') and contains(@class, 'ubermenu-target')])[1]"));
+                    //if (semiconductorOption != null) {
+                       // semiconductorOption.click();
+                       // Thread.sleep(3000);
+                       // System.out.println(driver.getCurrentUrl());
+                   // } else {
+                     //   System.out.println("Semiconductor option not found!");
+                    //}
                 }
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
