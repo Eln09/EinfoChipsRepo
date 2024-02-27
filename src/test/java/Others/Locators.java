@@ -16,7 +16,7 @@ public class Locators{
         return a;
     }
     public By SemiconductorDomains(){
-        By a= By.xpath("(//span[@class='ubermenu-target-title ubermenu-target-text' and text()='Semiconductor'])[1]");
+        By a= By.xpath("(//a[@class='ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left'])[8]");
         return a;
     }
     public By HomeMenuDomains(){
