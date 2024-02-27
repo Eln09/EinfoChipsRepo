@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
 import java.io.FileInputStream;
+import java.sql.Driver;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -28,7 +29,8 @@ public class ActionsClass {
         List<WebElement> a= driver.findElements(by);
         return a;
     }
-    public boolean elem_present(WebElement a) {
+    public boolean elem_present(By by) {
+        WebElement a= driver.findElement(by);
         boolean flag = false;
 
         try {
@@ -57,8 +59,8 @@ public class ActionsClass {
         }
     }
 
-    public void click_elem(WebElement a) {
-
+    public void click_elem(By by) {
+        WebElement a= driver.findElement(by);
         try {
             if (a.isDisplayed()) {
                 a.click();
@@ -125,9 +127,10 @@ public class ActionsClass {
    /* public void FinalSoftAssert(){
         softAssert.assertAll();
     }*/
-    public void JsExecutor(String arguments, WebElement a){
+    public void JsExecutor(String arguments, By by){
+        WebElement a= driver.findElement(by);
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        (jsExecutor).executeScript(arguments, a);
+        (jsExecutor).executeScript(arguments,a);
     }
     public void handleTab(Boolean FocusOnHome){
         // Get handles of all windows

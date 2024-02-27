@@ -46,7 +46,7 @@ public class EinfoChipsHome {
     @Test(priority = 1)
     public void validateLogo()throws Exception{
       Thread.sleep(2000);
-      action.SoftAssertBoolean(action.elem_present(action.find_elem(locator.LogoHome())),true,"Logo of Einfo Chips founded!");
+      action.SoftAssertBoolean(action.elem_present(locator.LogoHome()),true,"Logo of Einfo Chips founded!");
     }
 
     //3. First store all Header menus as Services , IPS Frameworks , read this during runtime and validate it in Xpath.
@@ -73,12 +73,12 @@ public class EinfoChipsHome {
         @Test(priority = 3)
         public void domainsOptions() throws Exception{
             Thread.sleep(2000);
-            action.MouseHover(locator.HomeMenuDomains());
+            action.JsExecutor("arguments[0].dispatchEvent(new MouseEvent('mouseover', { 'view': window, 'bubbles': true, 'cancelable': true }))",locator.HomeMenuDomains());
             Thread.sleep(2000);
-            WebElement semiconductorOption= action.find_elem(locator.SemiconductorDomains());
-            if(action.elem_present(semiconductorOption)) {
+            //WebElement semiconductorOption= action.find_elem(locator.SemiconductorDomains());
+            if(action.elem_present(locator.HomeMenuDomains())) {
                 System.out.println("semiconductor option is present!");
-                action.click_elem(semiconductorOption);
+                action.click_elem(locator.HomeMenuDomains());
                 Thread.sleep(2000);
             }else {
                 System.out.println("Semiconductor option not in Domains menu");
