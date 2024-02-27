@@ -77,9 +77,20 @@ public class EinfoChipsHome {
         public void domainsOptions() throws Exception{
 
             try {
-                if(driver.findElement(locator.HomeMenuDomains()) != null) {
+                WebElement domainsOption = driver.findElement(locator.HomeMenuDomains());
+                if(domainsOption != null) {
                     System.out.println("Domain option is present!");
-                    // Perform the mouse hover action here
+
+                    // Perform mouse hover on "Domains" option to trigger expected behavior
+                    Actions actions = new Actions(driver);
+                    actions.moveToElement(domainsOption).perform();
+                    if(driver.findElement(locator.SemiconductorDomains()) != null) {
+                        System.out.println("semicondcutor option is present!");
+                        // Perform the mouse hover action here
+                        Thread.sleep(2000); // Just for demonstration, you can remove this
+                    }
+                    // Add verification here for the expected outcome after mouse hover
+
                     Thread.sleep(2000); // Just for demonstration, you can remove this
                 }
             } catch (NoSuchElementException e) {

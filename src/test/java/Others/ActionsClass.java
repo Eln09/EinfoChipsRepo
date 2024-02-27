@@ -58,7 +58,7 @@ public class ActionsClass {
             }
         }
     }
-
+//.isDisplaayed causes trouble in jenkins
     public void click_elem(By by) {
         WebElement a= driver.findElement(by);
         try {
