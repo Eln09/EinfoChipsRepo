@@ -76,12 +76,12 @@ public class EinfoChipsHome {
         @Test(priority = 3)
         public void domainsOptions() throws Exception{
 
-            if(action.elem_present(locator.HomeMenuDomains())) {
-                System.out.println("semiconductor option is present!");
+            if(driver.findElement(locator.HomeMenuDomains()).isDisplayed()) {
+                System.out.println("domain option is present!");
                 //action.click_elem(locator.HomeMenuDomains());
                 Thread.sleep(2000);
             }else {
-                System.out.println("Semiconductor option not in Domains menu");
+                System.out.println("domain option not in Domains menu");
             }
 
          /*   action.JsExecutor("arguments[0].dispatchEvent(new MouseEvent('mouseover', { 'view': window, 'bubbles': true, 'cancelable': true }))",locator.HomeMenuDomains());
