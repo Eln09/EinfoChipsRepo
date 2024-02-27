@@ -91,6 +91,7 @@ public class EinfoChipsHome {
                         Thread.sleep(2000); // Just for demonstration, you can remove this
                     }else{
                          System.out.println("not working");
+                    }
                     // Add verification here for the expected outcome after mouse hover
 
                     Thread.sleep(2000); // Just for demonstration, you can remove this
