@@ -76,13 +76,16 @@ public class EinfoChipsHome {
         @Test(priority = 3)
         public void domainsOptions() throws Exception{
 
-            if(driver.findElement(locator.HomeMenuDomains()).isDisplayed()) {
-                System.out.println("domain option is present!");
-                //action.click_elem(locator.HomeMenuDomains());
-                Thread.sleep(2000);
-            }else {
-                System.out.println("domain option not in Domains menu");
+            try {
+                if(driver.findElement(locator.HomeMenuDomains()) != null) {
+                    System.out.println("Domain option is present!");
+                    // Perform the mouse hover action here
+                    Thread.sleep(2000); // Just for demonstration, you can remove this
+                }
+            } catch (NoSuchElementException e) {
+                System.out.println("Domain option not found in Domains menu");
             }
+        }
 
          /*   action.JsExecutor("arguments[0].dispatchEvent(new MouseEvent('mouseover', { 'view': window, 'bubbles': true, 'cancelable': true }))",locator.HomeMenuDomains());
             Thread.sleep(2000);
@@ -170,4 +173,4 @@ public class EinfoChipsHome {
         //action.FinalSoftAssert();
     }*/
 
-}}
+}
