@@ -84,11 +84,13 @@ public class EinfoChipsHome {
                     // Perform mouse hover on "Domains" option to trigger expected behavior
                     Actions actions = new Actions(driver);
                     actions.moveToElement(domainsOption).perform();
+                    Thread.sleep(2000);
                     if(driver.findElement(locator.SemiconductorDomains()) != null) {
                         System.out.println("semicondcutor option is present!");
                         // Perform the mouse hover action here
                         Thread.sleep(2000); // Just for demonstration, you can remove this
-                    }
+                    }else{
+                         System.out.println("not working");
                     // Add verification here for the expected outcome after mouse hover
 
                     Thread.sleep(2000); // Just for demonstration, you can remove this
