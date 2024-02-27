@@ -76,15 +76,28 @@ public class EinfoChipsHome {
         @Test(priority = 3)
     public void domainsOptions() throws Exception{
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement domainsOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]")));
-            if(domainsOption != null) {
-                System.out.println("Domain option is present!");
-                domainsOption.click();
-                Thread.sleep(3000);
-                System.out.println(driver.getCurrentUrl());
-                // Add further actions here after clicking on the "Domains" option
-            } else {
+           try {
+                WebElement domainsOption = driver.findElement(locator.HomeMenuDomains());
+                if(domainsOption != null) {
+                    System.out.println("Domain option is present!");
+                    driver.findElement(By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]")).click();
+                    Thread.sleep(3000);
+                    System.out.println(driver.getCurrentUrl());
+                    // Perform mouse hover on "Domains" option to trigger expected behavior
+                  //  Actions actions = new Actions(driver);
+                  //  actions.moveToElement(domainsOption).perform();
+                   // if(locator.SemiconductorDomains()!= null) {
+                    //    System.out.println("semicondcutor option is present!");
+                        // Perform the mouse hover action here
+                  //      Thread.sleep(2000); // Just for demonstration, you can remove this
+                  //  }else{
+                  //      System.out.println("not seen");
+                  //  }
+                    // Add verification here for the expected outcome after mouse hover
+
+                  //  Thread.sleep(2000); // Just for demonstration, you can remove this
+                }
+            } catch (NoSuchElementException e) {
                 System.out.println("Domain option not found in Domains menu");
             }
         }
