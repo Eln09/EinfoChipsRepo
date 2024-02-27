@@ -76,16 +76,18 @@ public class EinfoChipsHome {
         @Test(priority = 3)
     public void domainsOptions() throws Exception{
 
-            try {
-                WebElement domainsOption = driver.findElement(locator.HomeMenuDomains());
-                if(domainsOption != null) {
-                    System.out.println("Domain option is present!");
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].dispatchEvent(new Event('mouseover'))", By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]/ancestor::li[1]"));
-                    Thread.sleep(3000);
-                }
-            } catch (NoSuchElementException e) {
-                System.out.println("Domain option not found in Domains menu");
+           try {
+            WebElement domainsOption = driver.findElement(By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]"));
+            if (domainsOption != null) {
+                System.out.println("Domain option is present!");
+                Actions actions = new Actions(driver);
+                actions.moveToElement(domainsOption).perform();
+                Thread.sleep(3000); // Add a wait to observe the effect if needed
             }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
         }
 
          /*   action.JsExecutor("arguments[0].dispatchEvent(new MouseEvent('mouseover', { 'view': window, 'bubbles': true, 'cancelable': true }))",locator.HomeMenuDomains());
