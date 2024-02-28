@@ -78,7 +78,7 @@ public class EinfoChipsHome {
 
           try {
             //WebElement domainsOption = driver.findElement(By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]"));
-              WebElement domainsOption = driver.findElement(By.xpath("(//ul[@class='ubermenu-nav']/li/a/span[contains(text(),'Domains')])[1]"));
+              WebElement domainsOption = driver.findElement(By.xpath("//li[@id=menu-item-6380']"));
                 if (domainsOption != null) {
                     System.out.println("Domain option is present!");
                     Actions actions = new Actions(driver);
