@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
-
 import java.io.FileInputStream;
 import java.sql.Driver;
 import java.util.List;
@@ -70,15 +69,8 @@ public class ActionsClass {
             e.printStackTrace();
         }
     }
-    public static void mouseHover(WebDriver driver, WebElement element) {
-        String script = "var event = document.createEvent('MouseEvents');" +
-                "event.initEvent('mouseover', true, true);" +
-                "arguments[0].dispatchEvent(event);";
-        ((JavascriptExecutor) driver).executeScript(script, element);
-    }
-    public void MouseHover(By by)throws Exception{
+    public void MouseHover(By by){
         Actions a = new Actions(driver);
-        boolean flag= false;
         try{
             WebElement elem = driver.findElement(by);
             a.moveToElement(elem).perform();

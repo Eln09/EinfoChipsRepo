@@ -1,27 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="EinfoChips"
-           tests="3"
+           tests="9"
            failures="0"
            errors="0"
            skipped="0"
-           time="11.270">
+           time="40.705">
     <properties></properties>
 
 
 
             <testcase
+                name="domainsOptions"
+                time="14.092"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="ContactUs_page"
+                time="8.622"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateChampionInnovation"
+                time="6.068"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
                 name="validateLogo"
-                time="2.057"
+                time="2.061"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateMenuHeaders"
-                time="0.070"
+                time="0.083"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
-                name="domainsOptions"
-                time="9.143"
+                name="backHome_page"
+                time="4.667"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateAerospace_section"
+                time="0.037"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateSemiCond_page"
+                time="3.024"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateNewsletter_section"
+                time="2.051"
                 classname="Main.EinfoChipsHome">
             </testcase>
 </testsuite>

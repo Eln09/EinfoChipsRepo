@@ -131,7 +131,7 @@ public class EinfoChipsHome {
         Thread.sleep(2000);
         action.handleTab(false);
 
-        //action.JsExecutor("arguments[0].scrollIntoView();", action.find_elem(By.id("contacttab")));
+        action.JsExecutor("arguments[0].scrollIntoView();", locator.ContactUsSocialMedia());
         action.find_elem(locator.ContactUsformText(1)).sendKeys(Name);
         action.find_elem(locator.ContactUsformText(2)).sendKeys(Email);
         action.find_elem(locator.ContactUsformText(3)).sendKeys(Cel);
@@ -150,7 +150,7 @@ public class EinfoChipsHome {
     public void validateChampionInnovation(int EspNum)throws Exception {
         action.handleTab(true);
         Thread.sleep(2000);
-        action.JsExecutor("arguments[0].scrollIntoView();", locator.ChampDrivenBTitle());
+        action.JsExecutor("arguments[0].scrollIntoView();", locator.ChampDrivenBussinessSection());
         int count= action.find_elemList(locator.ChampioningSpecializations()).size();
         action.SoftAssertInt(count,EspNum,"Championing Innovation Driven Business option has a total of 10 specialization.");
         Thread.sleep(4000);
@@ -167,5 +167,4 @@ public class EinfoChipsHome {
         //System.out.println(myList.get(0));
         //action.FinalSoftAssert();
     }
-
 }
