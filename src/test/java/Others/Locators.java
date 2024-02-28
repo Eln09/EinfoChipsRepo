@@ -15,12 +15,12 @@ public class Locators{
         By a = By.xpath("(//nav/ul[@data-title='Home'])[1]/li/a[@class='ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only']/span[@class='ubermenu-target-title ubermenu-target-text']");
         return a;
     }
-    public By SemiconductorDomains(){
-        By a= By.xpath("(//span[@class='ubermenu-target-title ubermenu-target-text' and text()='Semiconductor'])[1]");
+    public By HomeMenuDomains(){
+        By a= By.xpath("(//a/span[text()='Domains'])[1]");
         return a;
     }
-    public By HomeMenuDomains(){
-        By a= By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]");
+    public By SemiconductorDomains(){
+        By a= By.xpath("(//a[contains(@href, 'semiconductor') and contains(@class, 'ubermenu-target')])[1]");
         return a;
     }
     public By NewsletterSection(){

@@ -77,33 +77,17 @@ public class EinfoChipsHome {
         public void domainsOptions() throws Exception{
 
             try {
-                WebElement domainsOption = driver.findElement(locator.HomeMenuDomains());
-                if(domainsOption != null) {
-                    System.out.println("Domain option is present!");
-
-                    // Perform mouse hover on "Domains" option to trigger expected behavior
-                    Actions actions = new Actions(driver);
-                    actions.moveToElement(domainsOption).perform();
-                    if(locator.SemiconductorDomains()!= null) {
-                        System.out.println("semicondcutor option is present!");
-                        // Perform the mouse hover action here
-                        Thread.sleep(2000); // Just for demonstration, you can remove this
-                    }else{
-                        System.out.println("not seen");
-                    }
-                    // Add verification here for the expected outcome after mouse hover
-
-                    Thread.sleep(2000); // Just for demonstration, you can remove this
-                }
-            } catch (NoSuchElementException e) {
-                System.out.println("Domain option not found in Domains menu");
+                //WebElement domainsOption = driver.findElement(By.xpath("(//span[contains(@class, 'ubermenu-target-title') and text()='Domains'])[1]"));
+                //if (action.find_elem(locator.HomeMenuDomains())!= null) {
+                action.MouseHover(locator.HomeMenuDomains());
+                Thread.sleep(3000);
+                    //WebElement semiconductorOption = driver.findElement(locator.SemiconductorDomains());
+                   // if (semiconductorOption != null) {
+                action.click_elem(locator.SemiconductorDomains(),"Semiconductor option from Domains menu founded!");
+                Thread.sleep(3000);
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
             }
-        }
-
-         /*   action.JsExecutor("arguments[0].dispatchEvent(new MouseEvent('mouseover', { 'view': window, 'bubbles': true, 'cancelable': true }))",locator.HomeMenuDomains());
-            Thread.sleep(2000);
-            //WebElement semiconductorOption= action.find_elem(locator.SemiconductorDomains());
-
         }
 
         //5. Validate in Semiconductor page UTL = https://www.einfochips.com/domains/semiconductor/ and Title  = Semiconductor Design Services | ASIC/FPGA Design Services
@@ -124,7 +108,7 @@ public class EinfoChipsHome {
         public void backHome_page() throws Exception{
             //action.click_elem(action.find_elem(locator.Homebtn()));
             Thread.sleep(2000);
-            action.JsExecutor("arguments[0].click();", action.find_elem(locator.LogoHome()));
+            action.JsExecutor("arguments[0].click();", locator.LogoHome());
             Thread.sleep(2000);
         }
 
@@ -132,7 +116,7 @@ public class EinfoChipsHome {
     @Parameters("NewsletterEmail")
     @Test(priority = 6)
     public void validateNewsletter_section(String NewsletterEmail)throws Exception{
-        action.JsExecutor("arguments[0].scrollIntoView();", action.find_elem(locator.NewsletterSection()));
+        action.JsExecutor("arguments[0].scrollIntoView();", locator.NewsletterSection());
         Thread.sleep(2000);
         String Emailbox= action.find_elem(locator.BussinessEmail()).getAttribute("placeholder");
         action.SoftAssertString(Emailbox,NewsletterEmail, "The value of the Newsletter textbox is the expected one!");
@@ -143,7 +127,7 @@ public class EinfoChipsHome {
     @Parameters({"ContactName","ContactEmail","ContactCell","ContactCompany","ContactOption","ContactComment"})
     @Test(priority = 7)
     public void ContactUs_page(String Name,String Email,String Cel,String Compa,String Opt,String Com)throws Exception{
-        action.click_elem(action.find_elem(locator.ContactUsBtn()));
+        action.click_elem(locator.ContactUsBtn(),"Contact Us button founded!");
         Thread.sleep(2000);
         action.handleTab(false);
 
@@ -152,13 +136,12 @@ public class EinfoChipsHome {
         action.find_elem(locator.ContactUsformText(2)).sendKeys(Email);
         action.find_elem(locator.ContactUsformText(3)).sendKeys(Cel);
         action.find_elem(locator.ContactUsformText(4)).sendKeys(Compa);
-        action.click_elem(action.find_elem(locator.ContactUsSelect()));
+        action.click_elem(locator.ContactUsSelect(), "Dropdown from Contact Us form founded!");
         Thread.sleep(1000);
-        action.click_elem(action.find_elem(locator.ContactUsSelectOptions(Opt)));
+        action.click_elem(locator.ContactUsSelectOptions(Opt),"Domains option selected!");
         action.find_elem(locator.ContactUsComment()).sendKeys(Com);
         Thread.sleep(5000);
         driver.close();
-
     }
 
     //10. In Middle of Home page validate Championing Innovation Driven Business option has total 10 specialization.
@@ -167,7 +150,7 @@ public class EinfoChipsHome {
     public void validateChampionInnovation(int EspNum)throws Exception {
         action.handleTab(true);
         Thread.sleep(2000);
-        action.JsExecutor("arguments[0].scrollIntoView();", action.find_elem(locator.ChampDrivenBTitle()));
+        action.JsExecutor("arguments[0].scrollIntoView();", locator.ChampDrivenBTitle());
         int count= action.find_elemList(locator.ChampioningSpecializations()).size();
         action.SoftAssertInt(count,EspNum,"Championing Innovation Driven Business option has a total of 10 specialization.");
         Thread.sleep(4000);
@@ -176,14 +159,13 @@ public class EinfoChipsHome {
     //11. Validate if Section is 'Aerospace' then its corresponding image's src contains text as 'aerospace'.
     @Test(priority = 9)
     public void validateAerospace_section(){
-        WebElement aerospace= action.find_elem(locator.AerospaceSpecial(""));
-        action.SoftAssertBoolean(action.elem_present(aerospace),true,"Aerospace Specialization founded!");
+        action.SoftAssertBoolean(action.elem_present(locator.AerospaceSpecial("")),true,"Aerospace Specialization founded!");//check that Aerospace is in section
 
-        String AerospaceImg= action.find_elem(locator.AerospaceSpecial("//img")).getAttribute("src");
+        String AerospaceImg= action.find_elem(locator.AerospaceSpecial("//img")).getAttribute("src");//get src from Aerospace image
         boolean HasAerospaceSRC = AerospaceImg.toLowerCase().contains("aerospace");
         action.SoftAssertBoolean(HasAerospaceSRC,true,"Aerospace image's src contains text 'aerospace'");
         //System.out.println(myList.get(0));
         //action.FinalSoftAssert();
-    }*/
+    }
 
 }

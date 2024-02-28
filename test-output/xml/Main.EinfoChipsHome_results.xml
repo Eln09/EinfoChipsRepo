@@ -4,24 +4,24 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="2.290">
+           time="11.270">
     <properties></properties>
 
 
 
             <testcase
-                name="domainsOptions"
-                time="0.172"
+                name="validateLogo"
+                time="2.057"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateMenuHeaders"
-                time="0.077"
+                time="0.070"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
-                name="validateLogo"
-                time="2.041"
+                name="domainsOptions"
+                time="9.143"
                 classname="Main.EinfoChipsHome">
             </testcase>
 </testsuite>

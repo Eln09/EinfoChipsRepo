@@ -59,15 +59,22 @@ public class ActionsClass {
         }
     }
 //.isDisplaayed causes trouble in jenkins
-    public void click_elem(By by) {
+    public void click_elem(By by, String ifSuccess) {
         WebElement a= driver.findElement(by);
         try {
             if (a.isDisplayed()) {
                 a.click();
+                System.out.println(ifSuccess);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public static void mouseHover(WebDriver driver, WebElement element) {
+        String script = "var event = document.createEvent('MouseEvents');" +
+                "event.initEvent('mouseover', true, true);" +
+                "arguments[0].dispatchEvent(event);";
+        ((JavascriptExecutor) driver).executeScript(script, element);
     }
     public void MouseHover(By by)throws Exception{
         Actions a = new Actions(driver);
