@@ -1,23 +1,37 @@
 package Others;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
 import java.sql.Driver;
+import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
 public class ActionsClass {
+
+    public static final String SSpath= System.getProperty("user.dir")+"/Screenshot";
     public WebDriver driver;
 
-    public ActionsClass(WebDriver driver) {
+    ExtentSparkReporter spark;
+    ExtentReports extent;
+    ExtentTest logger;
 
+    // Constructor accepting WebDriver argument
+    public ActionsClass(WebDriver driver) {
         this.driver = driver;
     }
     public WebElement find_elem(By by){
@@ -42,7 +56,7 @@ public class ActionsClass {
 
         return flag;
     }
-    public void SoftAssertBoolean(boolean x,boolean y,String ifExpected){
+    public void SoftAssertBoolean(boolean x,boolean y,String ifExpected, String ScreenshotName){
         SoftAssert softAssert = new SoftAssert();
         boolean assertFailed = false;
         try {
@@ -50,6 +64,7 @@ public class ActionsClass {
             softAssert.assertAll();
         } catch (AssertionError e) {
             System.out.println("Assertion failed: " + e.getMessage());
+            captureSS(ScreenshotName);
             assertFailed = true;
         } finally {
             if (assertFailed==false) {
@@ -79,7 +94,7 @@ public class ActionsClass {
             e.printStackTrace();
         }
     }
-    public void SoftAssertString(String x,String y, String ifexpected){
+    public void SoftAssertString(String x,String y, String ifexpected, String ScreenshotName){
         SoftAssert softAssert = new SoftAssert();
         boolean assertFailed = false;
         try {
@@ -87,6 +102,7 @@ public class ActionsClass {
             softAssert.assertAll();
         } catch (AssertionError e) {
             System.out.println("Assertion failed: " + e.getMessage());
+            captureSS(ScreenshotName);
             assertFailed = true;
         } finally {
             if (assertFailed==false) {
@@ -94,13 +110,14 @@ public class ActionsClass {
             }
         }
     }
-    public void SoftAssertList(List<String> x,List<String> y, String ifexpected) {
+    public void SoftAssertList(List<String> x,List<String> y, String ifexpected, String ScreenshotName) {
         SoftAssert softAssert = new SoftAssert();
         boolean assertFailed = false;
         try {
             softAssert.assertAll();
         } catch (AssertionError e) {
             System.out.println("Assertion failed: " + e.getMessage());
+            captureSS(ScreenshotName);
             assertFailed = true;
         } finally {
             if (assertFailed == false) {
@@ -108,7 +125,7 @@ public class ActionsClass {
             }
         }
     }
-    public void SoftAssertInt(int x,int y, String ifexpected){
+    public void SoftAssertInt(int x,int y, String ifexpected, String ScreenshotName){
         SoftAssert softAssert = new SoftAssert();
         boolean assertFailed = false;
         try {
@@ -116,6 +133,7 @@ public class ActionsClass {
             softAssert.assertAll();
         } catch (AssertionError e) {
             System.out.println("Assertion failed: " + e.getMessage());
+            captureSS(ScreenshotName);
             assertFailed = true;
         } finally {
             if (assertFailed==false) {
@@ -147,6 +165,16 @@ public class ActionsClass {
             driver.switchTo().window((String) windowHandles.toArray()[0]);
         }
 
+    }
+    public void captureSS(String SSName){
+        // Take the screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        // Copy the file to a location and use try-catch block to handle exception
+        try {
+            FileHandler.copy(screenshot, new File(SSpath+"/"+SSName+".png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
 
