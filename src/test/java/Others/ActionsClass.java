@@ -27,8 +27,8 @@ public class ActionsClass {
     private WebDriver driver;
 
     ExtentSparkReporter spark;
-    ExtentReports extent;
-    ExtentTest logger;
+    public ExtentReports extent;
+    public ExtentTest logger;
     public void ActionsDriver(WebDriver driver) {
         this.driver = driver;
     }
@@ -60,9 +60,11 @@ public class ActionsClass {
         try {
             softAssert.assertEquals(x, y);
             softAssert.assertAll();
+            logger.pass(ifExpected);
         } catch (AssertionError e) {
             System.out.println("Assertion failed: " + e.getMessage());
             captureSS(ScreenshotName);
+            logger.fail(ScreenshotName);
             assertFailed = true;
         } finally {
             if (assertFailed==false) {
@@ -92,50 +94,57 @@ public class ActionsClass {
             e.printStackTrace();
         }
     }
-    public void SoftAssertString(String x,String y, String ifexpected, String ScreenshotName){
+    public void SoftAssertString(String x,String y, String ifExpected, String ScreenshotName){
         SoftAssert softAssert = new SoftAssert();
         boolean assertFailed = false;
         try {
             softAssert.assertEquals(x, y);
             softAssert.assertAll();
+            logger.pass(ifExpected);
         } catch (AssertionError e) {
             System.out.println("Assertion failed: " + e.getMessage());
             captureSS(ScreenshotName);
             assertFailed = true;
+            logger.fail(ScreenshotName);
         } finally {
             if (assertFailed==false) {
-                System.out.println(ifexpected);
+                System.out.println(ifExpected);
             }
         }
     }
-    public void SoftAssertList(List<String> x,List<String> y, String ifexpected, String ScreenshotName) {
+    public void SoftAssertList(List<String> x,List<String> y, String ifExpected, String ScreenshotName) {
         SoftAssert softAssert = new SoftAssert();
         boolean assertFailed = false;
         try {
+            softAssert.assertEquals(x, y);
             softAssert.assertAll();
+            logger.pass(ifExpected);
         } catch (AssertionError e) {
             System.out.println("Assertion failed: " + e.getMessage());
             captureSS(ScreenshotName);
             assertFailed = true;
+            logger.fail(ScreenshotName);
         } finally {
             if (assertFailed == false) {
-                System.out.println(ifexpected);
+                System.out.println(ifExpected);
             }
         }
     }
-    public void SoftAssertInt(int x,int y, String ifexpected, String ScreenshotName){
+    public void SoftAssertInt(int x,int y, String ifExpected, String ScreenshotName){
         SoftAssert softAssert = new SoftAssert();
         boolean assertFailed = false;
         try {
             softAssert.assertEquals(x, y);
             softAssert.assertAll();
+            logger.pass(ifExpected);
         } catch (AssertionError e) {
             System.out.println("Assertion failed: " + e.getMessage());
             captureSS(ScreenshotName);
             assertFailed = true;
+            logger.fail(ScreenshotName);
         } finally {
             if (assertFailed==false) {
-                System.out.println(ifexpected);
+                System.out.println(ifExpected);
             }
         }
     }
@@ -173,6 +182,23 @@ public class ActionsClass {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+    public void ExtentReports(){
+        extent = new ExtentReports();
+        spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/einfochips.html");
+        extent.attachReporter(spark);
+        extent.setSystemInfo("Host Name", "EinfoChips test");
+        extent.setSystemInfo("Environment", "Production");
+        extent.setSystemInfo("User Name", "Test Team");
+        spark.config().setDocumentTitle("EinfoChips Application QA ");
+// Name of the report
+        spark.config().setReportName("EinfoChips Selenium testNG ");
+// Dark Theme
+        spark.config().setTheme(Theme.STANDARD);
+    }
+    public void EndTests(){
+        driver.quit();
+        extent.flush();
     }
 }
 

@@ -26,6 +26,8 @@ public class EinfoChipsHome extends ActionsClass{
 
     @BeforeClass
     public void launchBrowser(String url) {
+        ExtentReports();
+        logger = extent.createTest("EinfoChips Home");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(url);
@@ -36,7 +38,7 @@ public class EinfoChipsHome extends ActionsClass{
 
     @AfterClass
     public void closeBrowser(){
-        driver.quit();
+        EndTests();
     }
 
     //2. Validate Logo.
@@ -45,6 +47,7 @@ public class EinfoChipsHome extends ActionsClass{
       Thread.sleep(2000);
       //Assert logo is present then give message, if not, a screenshot will be taken
       SoftAssertBoolean(elem_present(locator.LogoHome()),true,"Logo of Einfo Chips founded!", "EinfoChipsLogo");
+
     }
 
     //3. First store all Header menus as Services , IPS Frameworks , read this during runtime and validate it in Xpath.
@@ -85,7 +88,7 @@ public class EinfoChipsHome extends ActionsClass{
         @Parameters({"SemiCondUrl","SemiCondTitle"})
         @Test(priority = 4)
         public void validateSemiCond_page(String SemiCondUrl, String SemiCondTitle) throws Exception{
-
+            logger = extent.createTest("Semiconductor Home");
             Thread.sleep(2000);
             String SemiCpageUrl = driver.getCurrentUrl();
             String SemiCpageTitle = driver.getTitle();
@@ -100,6 +103,7 @@ public class EinfoChipsHome extends ActionsClass{
             //click on logo to go back home with JS executor
             JsExecutor("arguments[0].click();", locator.LogoHome());
             Thread.sleep(2000);
+            logger = extent.createTest("Back on EinfoChips Home");
         }
 
     //7. Do scroll to element of Subscribe to Newsletter section and validate the text box is having placeholder value as 'Business Email'
@@ -122,6 +126,7 @@ public class EinfoChipsHome extends ActionsClass{
         Thread.sleep(2000);
         handleTab(false);
 
+        logger = extent.createTest("EinfoChips Contact Us");
         JsExecutor("arguments[0].scrollIntoView();", locatorCU.ContactUsSocialMedia());
         //fill contact us form with data from einfochips.xml
         find_elem(locatorCU.ContactUsformText(1)).sendKeys(Name);
@@ -142,6 +147,7 @@ public class EinfoChipsHome extends ActionsClass{
     public void validateChampionInnovation(int EspNum)throws Exception {
         handleTab(true);
         Thread.sleep(2000);
+        logger = extent.createTest("EinfoChips Home sections");
         JsExecutor("arguments[0].scrollIntoView();", locator.ChampDrivenBussinessSection());
         int count= find_elemList(locator.ChampioningSpecializations()).size();
         SoftAssertInt(count,EspNum,"Championing Innovation Driven Business option has a total of 10 specialization.","ChampionInnovationSpecializations");
