@@ -79,9 +79,11 @@ public class ActionsClass {
             if (a.isDisplayed()) {
                 a.click();
                 System.out.println(ifSuccess);
+                logger.pass(ifSuccess);
             }
         } catch (Exception e) {
             e.printStackTrace();
+            logger.fail(by.toString());
         }
     }
     public void MouseHover(By by){
