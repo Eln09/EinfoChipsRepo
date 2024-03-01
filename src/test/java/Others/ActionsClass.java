@@ -24,14 +24,12 @@ import java.util.Set;
 public class ActionsClass {
 
     public static final String SSpath= System.getProperty("user.dir")+"/Screenshot";
-    public WebDriver driver;
+    private WebDriver driver;
 
     ExtentSparkReporter spark;
     ExtentReports extent;
     ExtentTest logger;
-
-    // Constructor accepting WebDriver argument
-    public ActionsClass(WebDriver driver) {
+    public void ActionsDriver(WebDriver driver) {
         this.driver = driver;
     }
     public WebElement find_elem(By by){

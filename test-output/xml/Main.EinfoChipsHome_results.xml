@@ -1,80 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="EinfoChips"
-           tests="10"
-           failures="3"
+           tests="9"
+           failures="0"
            errors="0"
            skipped="0"
-           time="32.661">
+           time="33.855">
     <properties></properties>
 
-            <testcase
-                name="closeBrowser"
-                time="0.000"
-                classname="Main.EinfoChipsHome">
-
-            <failure type="java.lang.NullPointerException" message="Cannot invoke &quot;org.openqa.selenium.WebDriver.quit()&quot; because &quot;this.driver&quot; is null">
-                <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "this.driver" is null
-                Main.EinfoChipsHome.closeBrowser(EinfoChipsHome.java:43)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)java.base/java.lang.reflect.Method.invoke(Method.java:568)org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)org.testng.internal.invokers.TestMethodWorker.invokeAfterClassConfigurations(TestMethodWorker.java:229)org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:215)org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)java.base/java.util.ArrayList.forEach(ArrayList.java:1511)org.testng.TestRunner.privateRun(TestRunner.java:819)org.testng.TestRunner.run(TestRunner.java:619)org.testng.SuiteRunner.runTest(SuiteRunner.java:443)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)org.testng.SuiteRunner.run(SuiteRunner.java:336)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)org.testng.TestNG.runSuitesLocally(TestNG.java:1228)org.testng.TestNG.runSuites(TestNG.java:1134)org.testng.TestNG.run(TestNG.java:1101)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-]]>
-            </failure>
-    </testcase>
-            <testcase
-                name="validateSemiCond_page"
-                time="2.015"
-                classname="Main.EinfoChipsHome">
-
-            <failure type="java.lang.NullPointerException" message="Cannot invoke &quot;org.openqa.selenium.WebDriver.getCurrentUrl()&quot; because &quot;this.driver&quot; is null">
-                <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.getCurrentUrl()" because "this.driver" is null
-                Main.EinfoChipsHome.validateSemiCond_page(EinfoChipsHome.java:99)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)java.base/java.lang.reflect.Method.invoke(Method.java:568)org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)java.base/java.util.ArrayList.forEach(ArrayList.java:1511)org.testng.TestRunner.privateRun(TestRunner.java:819)org.testng.TestRunner.run(TestRunner.java:619)org.testng.SuiteRunner.runTest(SuiteRunner.java:443)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)org.testng.SuiteRunner.run(SuiteRunner.java:336)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)org.testng.TestNG.runSuitesLocally(TestNG.java:1228)org.testng.TestNG.runSuites(TestNG.java:1134)org.testng.TestNG.run(TestNG.java:1101)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-]]>
-            </failure>
-    </testcase>
-            <testcase
-                name="ContactUs_page"
-                time="8.557"
-                classname="Main.EinfoChipsHome">
-
-            <failure type="java.lang.NullPointerException" message="Cannot invoke &quot;org.openqa.selenium.WebDriver.close()&quot; because &quot;this.driver&quot; is null">
-                <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "this.driver" is null
-                Main.EinfoChipsHome.ContactUs_page(EinfoChipsHome.java:143)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)java.base/java.lang.reflect.Method.invoke(Method.java:568)org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)java.base/java.util.ArrayList.forEach(ArrayList.java:1511)org.testng.TestRunner.privateRun(TestRunner.java:819)org.testng.TestRunner.run(TestRunner.java:619)org.testng.SuiteRunner.runTest(SuiteRunner.java:443)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)org.testng.SuiteRunner.run(SuiteRunner.java:336)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)org.testng.TestNG.runSuitesLocally(TestNG.java:1228)org.testng.TestNG.runSuites(TestNG.java:1134)org.testng.TestNG.run(TestNG.java:1101)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-]]>
-            </failure>
-    </testcase>
 
 
-            <testcase
-                name="validateNewsletter_section"
-                time="2.046"
-                classname="Main.EinfoChipsHome">
-            </testcase>
-            <testcase
-                name="domainsOptions"
-                time="9.312"
-                classname="Main.EinfoChipsHome">
-            </testcase>
-            <testcase
-                name="backHome_page"
-                time="2.495"
-                classname="Main.EinfoChipsHome">
-            </testcase>
             <testcase
                 name="validateLogo"
-                time="2.047"
+                time="2.086"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="ContactUs_page"
+                time="9.256"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateChampionInnovation"
-                time="6.093"
+                time="6.126"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="backHome_page"
+                time="2.882"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateNewsletter_section"
+                time="2.081"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="domainsOptions"
+                time="9.199"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateMenuHeaders"
-                time="0.061"
+                time="0.152"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateSemiCond_page"
+                time="2.026"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateAerospace_section"
-                time="0.035"
+                time="0.047"
                 classname="Main.EinfoChipsHome">
             </testcase>
 </testsuite>

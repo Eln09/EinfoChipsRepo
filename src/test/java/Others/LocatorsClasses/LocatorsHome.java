@@ -1,8 +1,11 @@
 package Others.LocatorsClasses;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public class LocatorsHome {
+
 
     public By LogoHome(){
         return By.xpath("(//div[@class=' header-logo fit-logo-img add-header-height  logo-has-sticky']//a/img)[1]");
