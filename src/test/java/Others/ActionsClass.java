@@ -4,7 +4,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -95,6 +97,10 @@ public class ActionsClass {
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+    public void ExplitWait(By by) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Wait up to 10 seconds
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
     public void SoftAssertString(String x,String y, String ifExpected, String ScreenshotName){
         SoftAssert softAssert = new SoftAssert();

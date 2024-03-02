@@ -76,9 +76,8 @@ public class EinfoChipsHome extends ActionsClass{
 
             try {
                 MouseHover(locator.HomeMenuDomains());
-                Thread.sleep(2000);
+                ExplitWait(locator.SemiconductorDomains());
                 click_elem(locator.SemiconductorDomains(),"Semiconductor option from Domains menu founded!");
-                Thread.sleep(2000);
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
             }
@@ -89,7 +88,7 @@ public class EinfoChipsHome extends ActionsClass{
         @Test(priority = 4)
         public void validateSemiCond_page(String SemiCondUrl, String SemiCondTitle) throws Exception{
             logger = extent.createTest("Semiconductor Home");
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             String SemiCpageUrl = driver.getCurrentUrl();
             String SemiCpageTitle = driver.getTitle();
 
@@ -134,10 +133,10 @@ public class EinfoChipsHome extends ActionsClass{
         find_elem(locatorCU.ContactUsformText(3)).sendKeys(Cel);
         find_elem(locatorCU.ContactUsformText(4)).sendKeys(Compa);
         click_elem(locatorCU.ContactUsSelect(), "Dropdown from Contact Us form founded!");
-        Thread.sleep(1000);
+        ExplitWait(locatorCU.ContactUsSelectOptions(Opt));//wait until option is displayed in dropdown
         click_elem(locatorCU.ContactUsSelectOptions(Opt),"Domains option selected!");
         find_elem(locatorCU.ContactUsComment()).sendKeys(Com);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         driver.close();
     }
 
@@ -146,8 +145,8 @@ public class EinfoChipsHome extends ActionsClass{
     @Test(priority = 8)
     public void validateChampionInnovation(int EspNum)throws Exception {
         handleTab(true);
-        Thread.sleep(2000);
         logger = extent.createTest("EinfoChips Home sections");
+        ExplitWait(locator.ChampDrivenBussinessSection());//wait until section is displayed
         JsExecutor("arguments[0].scrollIntoView();", locator.ChampDrivenBussinessSection());
         int count= find_elemList(locator.ChampioningSpecializations()).size();
         SoftAssertInt(count,EspNum,"Championing Innovation Driven Business option has a total of 10 specialization.","ChampionInnovationSpecializations");

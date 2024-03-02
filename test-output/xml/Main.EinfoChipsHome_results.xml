@@ -4,54 +4,54 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="36.648">
+           time="24.433">
     <properties></properties>
 
 
 
             <testcase
-                name="domainsOptions"
-                time="12.223"
-                classname="Main.EinfoChipsHome">
-            </testcase>
-            <testcase
-                name="backHome_page"
-                time="2.756"
-                classname="Main.EinfoChipsHome">
-            </testcase>
-            <testcase
-                name="validateNewsletter_section"
-                time="2.070"
+                name="validateMenuHeaders"
+                time="0.152"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="ContactUs_page"
-                time="9.099"
+                time="5.129"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateLogo"
-                time="2.086"
+                time="2.087"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="domainsOptions"
+                time="4.963"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="backHome_page"
+                time="2.749"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateNewsletter_section"
+                time="2.067"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateChampionInnovation"
-                time="6.155"
-                classname="Main.EinfoChipsHome">
-            </testcase>
-            <testcase
-                name="validateMenuHeaders"
-                time="0.157"
-                classname="Main.EinfoChipsHome">
-            </testcase>
-            <testcase
-                name="validateAerospace_section"
-                time="0.065"
+                time="4.192"
                 classname="Main.EinfoChipsHome">
             </testcase>
             <testcase
                 name="validateSemiCond_page"
-                time="2.037"
+                time="3.019"
+                classname="Main.EinfoChipsHome">
+            </testcase>
+            <testcase
+                name="validateAerospace_section"
+                time="0.075"
                 classname="Main.EinfoChipsHome">
             </testcase>
 </testsuite>
